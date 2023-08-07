@@ -6,12 +6,11 @@ const next = require('next')
 
 const PORT = process.env.PORT || 5000
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = process.env.HOSTNAME
 
 const userSocketMap = {}
 
 const app = express()
-const nextApp = next({ dev, hostname, PORT })
+const nextApp = next({ dev })
 const nextHandler = nextApp.getRequestHandler();
 
 const server = http.createServer(app)
